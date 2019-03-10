@@ -1,0 +1,22 @@
+version: '3.2'
+#version: '2.0'
+services:
+
+  asterservice:
+      #    cap_add:
+      #      - SYS_ADMIN
+      #      - SYS_PTRACE
+    image: justin2004/asterisk_box
+    build: .
+    ports:
+      - "2000:2000"
+    environment:
+      container: docker
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+      - type: tmpfs
+        target: /run
+      - type: tmpfs
+        target: /run/lock
+      - type: tmpfs
+        target: /tmp
