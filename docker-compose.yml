@@ -10,6 +10,7 @@ services:
     build: .
     ports:
       - "2000:2000"
+      - "5060:5060/udp"
     environment:
       container: docker
     volumes:
